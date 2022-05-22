@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int binary_search(int arr[])
+{
+    int l = 0;
+    int r = sizeof(arr) / sizeof(arr[0]);
+    int f;
+    std::cout << "Какое число найти?" << std::endl << "Введите: ";
+    std::cin >> f;
+    while (l < r)
+    {
+        int m = (r + l) / 2;   
+        if (arr[m] > f)
+        {
+            r = m;
+        }
+        else
+        {
+            l = m + 1;
+        }
+    }
+    r--;
+    if (arr[r] == f)
+    {
+        return r;
+    }
+    else
+    {
+        return -1;
+    }
+}
